@@ -1,0 +1,59 @@
+.card {
+  list-style-type: none;
+  max-width: 413px;
+}
+
+.card__image {
+  width: 100%;
+  height: 413px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.card__content {
+  max-width: 413px;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 0;
+}
+
+.card__description {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
+}
+
+.card__like-btn {
+  background-color: #fcf5e5;
+  background-image: url(../images/union.svg);
+  border-style: none;
+  padding: 0;
+  opacity: 0.6;
+  width: 23px;
+  height: 20px;
+}
+
+.card__like-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 630px) {
+  .card__image {
+    height: 318px;
+  }
+
+  .card__description {
+    font-size: 16px;
+  }
+
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
+  }
+}
