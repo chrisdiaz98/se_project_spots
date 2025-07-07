@@ -16,7 +16,7 @@ In this project, I’m developing the foundation of an interactive image-sharing
 
 This webpage is deployed to GitHub pages
 
-- ADD LINK HERE
+[View live site here](https://chrisdiaz98.github.io/se_project_spots)
 
 ## PICTURES
 
