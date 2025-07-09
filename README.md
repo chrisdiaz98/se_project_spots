@@ -18,6 +18,8 @@ This webpage is deployed to GitHub pages
 
 [View live site here](https://chrisdiaz98.github.io/se_project_spots)
 
+[VIDEO Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=drive_link)
+
 ## PICTURES
 
 [Screenshot of Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48 AM.png)
