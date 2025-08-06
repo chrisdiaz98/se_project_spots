@@ -1,6 +1,10 @@
 // ===== Initial Cards Data =====
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -55,9 +59,52 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const linkInput = newPostModal.querySelector("#card-image-input");
 const nameInput = newPostModal.querySelector("#card-caption-input");
 
+// ===== Modal Elements: Image Preview =====
+const previewModal = document.querySelector("#preview-modal");
+const previewImage = previewModal.querySelector(".modal__image");
+const previewCaption = previewModal.querySelector(".modal__caption");
+const previewCloseBtn = previewModal.querySelector(".modal__image-close-btn");
+
 // ===== Profile Display Elements =====
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
+// ===== Card Elements =====
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
+// ===== Generate a Card Element =====
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__description");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle("card__like-btn_active");
+  });
+
+  const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
+  cardDeleteBtnEl.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  // ===== Image Preview Click Logic =====
+  cardImageEl.addEventListener("click", () => {
+    previewImage.src = data.link;
+    previewImage.alt = data.name;
+    previewCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+
+  return cardElement;
+}
 
 // ===== Event Handlers: Edit Profile =====
 editProfileBtn.addEventListener("click", function () {
@@ -93,14 +140,27 @@ addCardFormElement.addEventListener(
   "submit",
   function handleAddCardSubmit(evt) {
     evt.preventDefault();
-    console.log("Image URL:", linkInput.value);
-    console.log("Caption:", nameInput.value);
+
+    const inputValues = {
+      name: nameInput.value,
+      link: linkInput.value,
+    };
+
+    const cardElement = getCardElement(inputValues);
+    cardsList.prepend(cardElement);
+
     closeModal(newPostModal);
     addCardFormElement.reset();
   }
 );
 
+// ===== Close Preview Modal =====
+previewCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
 // ===== Initial Card Setup =====
 initialCards.forEach(function (card) {
-  console.log(card.name); // Just testing
+  const cardElement = getCardElement(card);
+  cardsList.append(cardElement);
 });
