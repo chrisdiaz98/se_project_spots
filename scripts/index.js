@@ -59,7 +59,7 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const linkInput = newPostModal.querySelector("#card-image-input");
 const nameInput = newPostModal.querySelector("#card-caption-input");
 
-// ===== Modal Elements: Image Preview =====
+// ===== Modal Elements: Preview Image =====
 const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
@@ -75,7 +75,7 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__list");
 
-// ===== Generate a Card Element =====
+// ===== Get Card Elements =====
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__description");
@@ -85,17 +85,19 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
+  // Like button
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
   cardLikeBtnEl.addEventListener("click", () => {
     cardLikeBtnEl.classList.toggle("card__like-btn_active");
   });
 
+  // Delete button
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
-    cardElement.remove();
+    cardElement.remove(); // No need to reassign a const
   });
 
-  // ===== Image Preview Click Logic =====
+  // Image click to open preview modal
   cardImageEl.addEventListener("click", () => {
     previewImage.src = data.link;
     previewImage.alt = data.name;
@@ -107,60 +109,54 @@ function getCardElement(data) {
 }
 
 // ===== Event Handlers: Edit Profile =====
-editProfileBtn.addEventListener("click", function () {
+editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
+editProfileCloseBtn.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-editProfileForm.addEventListener(
-  "submit",
-  function handleEditProfileSubmit(evt) {
-    evt.preventDefault();
-    profileNameEl.textContent = editProfileNameInput.value;
-    profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-    closeModal(editProfileModal);
-  }
-);
+editProfileForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  closeModal(editProfileModal);
+});
 
 // ===== Event Handlers: New Post =====
-newPostBtn.addEventListener("click", function () {
+newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-newPostCloseBtn.addEventListener("click", function () {
+newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-addCardFormElement.addEventListener(
-  "submit",
-  function handleAddCardSubmit(evt) {
-    evt.preventDefault();
+addCardFormElement.addEventListener("submit", (evt) => {
+  evt.preventDefault();
 
-    const inputValues = {
-      name: nameInput.value,
-      link: linkInput.value,
-    };
+  const newCard = {
+    name: nameInput.value,
+    link: linkInput.value,
+  };
 
-    const cardElement = getCardElement(inputValues);
-    cardsList.prepend(cardElement);
+  const cardElement = getCardElement(newCard);
+  cardsList.prepend(cardElement);
 
-    closeModal(newPostModal);
-    addCardFormElement.reset();
-  }
-);
+  closeModal(newPostModal);
+  addCardFormElement.reset();
+});
 
-// ===== Close Preview Modal =====
+// ===== Event Handlers: Preview Modal =====
 previewCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
 // ===== Initial Card Setup =====
-initialCards.forEach(function (card) {
+initialCards.forEach((card) => {
   const cardElement = getCardElement(card);
   cardsList.append(cardElement);
 });
