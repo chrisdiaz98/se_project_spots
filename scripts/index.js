@@ -144,6 +144,7 @@ function getCardElement(data) {
 
 // ===== Event Handlers: Edit Profile =====
 editProfileBtn.addEventListener("click", () => {
+  resetForm(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);

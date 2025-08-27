@@ -190,7 +190,7 @@
   cursor: pointer;
 }
 
-.modal__submit-btn_inactive {
+.modal__submit-btn_disabled {
   opacity: 0.5;
 }
 
