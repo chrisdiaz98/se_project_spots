@@ -16,11 +16,6 @@ const hideInputError = (formEl, inputEl, config) => {
 
 // Check input validity
 const checkInputValidity = (formEl, inputEl, config) => {
-  if (inputEl.value.trim() === "") {
-    hideInputError(formEl, inputEl, config);
-    return;
-  }
-
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
@@ -68,11 +63,10 @@ function enableValidation(config) {
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn_inactive",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__input-error_active",
+  errorClass: "modal__error_visible", // updated to match CSS
 };
 
-// Initialize validation
 enableValidation(settings);
