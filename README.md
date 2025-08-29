@@ -54,3 +54,9 @@ Video Walkthrough | Part 2 Coming Soon.
 [Screenshot of Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48 AM.png)
 
 [Screenshot of Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.14.33 AM.png)
+
+[Screenshot of Spots App](./images/README-images/card-image-modal-readme.png)
+
+[Screenshot of Spots App](./images/README-images/edit-profile-readme.png)
+
+[Screenshot of Spots App](./images/README-images/new-post-readme.png)
