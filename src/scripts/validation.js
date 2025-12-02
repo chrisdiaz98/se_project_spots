@@ -7,7 +7,7 @@ const showInputError = (formEl, inputEl, errorMsg, config) => {
 };
 
 // Hide input error
-const hideInputError = (formEl, inputEl, config) => {
+export const hideInputError = (formEl, inputEl, config) => {
   const errorEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.remove(config.inputErrorClass);
   errorEl.classList.remove(config.errorClass);
@@ -28,7 +28,7 @@ const hasInvalidInput = (inputList) =>
   inputList.some((input) => !input.validity.valid);
 
 // Toggle submit button state
-const toggleButtonState = (inputList, buttonEl, config) => {
+export const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
     buttonEl.classList.add(config.inactiveButtonClass);
     buttonEl.disabled = true;
@@ -54,19 +54,17 @@ const setEventListeners = (formEl, config) => {
 };
 
 // Enable validation on all forms
-function enableValidation(config) {
+export function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formEl) => setEventListeners(formEl, config));
 }
 
 // Configuration object
-const settings = {
+export const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible", // updated to match CSS
+  errorClass: "modal__error_visible",
 };
-
-enableValidation(settings);

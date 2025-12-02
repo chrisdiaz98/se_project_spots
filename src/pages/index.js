@@ -1,3 +1,20 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
+import "./index.css";
+
+import spotsLogoUrl from "../images/spots-logo.svg";
+import avatarUrl from "../images/avatar.jpg";
+import editIconUrl from "../images/edit-icon.svg";
+import plusIconUrl from "../images/plus-icon.svg";
+
+import {
+  enableValidation,
+  settings,
+  hideInputError,
+  toggleButtonState,
+} from "../scripts/validation.js";
+
 // ===== Initial Cards Data =====
 const initialCards = [
   {
@@ -38,6 +55,7 @@ function resetForm(modal) {
   if (!formEl) return;
 
   formEl.reset();
+
   const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
   inputList.forEach((input) => hideInputError(formEl, input, settings));
 
@@ -105,6 +123,19 @@ const previewCloseBtn = previewModal.querySelector(".modal__image-close-btn");
 // ===== Profile Display =====
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
+// ===== Wire static <img> assets (so webpack emits them) =====
+const headerLogo = document.querySelector(".header__logo");
+if (headerLogo) headerLogo.src = spotsLogoUrl;
+
+const profileAvatar = document.querySelector(".profile__avatar");
+if (profileAvatar) profileAvatar.src = avatarUrl;
+
+const pencilIcon = document.querySelector(".profile__pencil-icon");
+if (pencilIcon) pencilIcon.src = editIconUrl;
+
+const plusIcon = document.querySelector(".profile__plus-icon");
+if (plusIcon) plusIcon.src = plusIconUrl;
 
 // ===== Card Template =====
 const cardTemplate = document
@@ -185,3 +216,6 @@ previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
 initialCards.forEach((card) => {
   cardsList.append(getCardElement(card));
 });
+
+// ===== Enable form validation =====
+enableValidation(settings);
