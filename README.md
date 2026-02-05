@@ -1,62 +1,153 @@
-# Project 3: Spots
+# Spots — Interactive Image Sharing App
 
 ## Description
 
-Project Description
+Spots is an interactive image-sharing web application that allows users to manage a personal profile and interact with image posts through a modern, responsive interface.
 
-In this project, I’m developing the foundation of an interactive image-sharing site called Spots.
+The project began as a frontend UI and evolved into a fully connected application using a real backend API. The application now supports persistent user data, card creation, likes, and deletion with confirmation workflows.
 
-The main focus is on:
+The main focus areas of this project include:
 
-Responsive design: ensuring the webpage adapts smoothly to various screen sizes using CSS Grid, media queries, and other modern techniques.
+- Responsive design across desktop, tablet, and mobile devices
+- Modular JavaScript architecture
+- REST API integration
+- Dynamic modal-based user interactions
+- Form validation and UX feedback improvements
 
-Modals: implementing interactive pop-up windows that allow users to edit their profile, add new content, and interact with the site in a dynamic way.
+---
 
-Form validation: adding custom JavaScript validation for forms inside the modals. Each form step (separated into fieldsets) is validated independently, with real-time feedback for users and proper enabling/disabling of submit buttons.
+## Features
 
-This combination creates a smooth, user-friendly experience across desktop, tablet, and mobile devices while laying the groundwork for a more fully-featured interactive platform.
+### User Profile
 
-Features
+- Load profile data from server
+- Edit name and description
+- Update profile avatar (persistent)
 
-📱 Responsive Layout – built with CSS Grid and media queries for desktop, tablet, and mobile.
+### Image Cards
 
-🪟 Interactive Modals – profile editing, content addition, and dynamic interactions in popup windows.
+- Load cards from API on page load
+- Add new cards (saved to server)
+- Delete cards (with confirmation modal + server sync)
+- Like / Unlike cards (server persisted)
 
-✅ Form Validation – custom JavaScript validation with error messages, red borders, and per-fieldset validation.
+### Modal System
 
-⛔ Button State Management – submit buttons are automatically enabled/disabled based on input validity.
+- Edit Profile Modal
+- Add Post Modal
+- Avatar Update Modal
+- Delete Confirmation Modal
+- Image Preview Modal
 
-🎨 Modern UI – clean and adaptable design that provides a seamless user experience.
+### Form UX
+
+- Real-time validation
+- Disabled submit buttons when invalid
+- Loading states (Saving…, Deleting…, etc.)
+- Form reset on modal close
+
+### Responsive Design
+
+- Built with media queries
+- Mobile-friendly modal layouts
+- Figma-aligned delete modal styling
+
+---
 
 ## Tech Stack
 
-- HTML
-- CSS
-- RESPONSIVE DESIGN
-- MEDIA QUERIES
-- FOLLOWS BEM METHODOLOGY
-- JAVA SCRIPT
+### Core
 
-## DEPLOYMENT
+- HTML5
+- CSS3
+- JavaScript (ES6 Modules)
 
-This webpage is deployed to GitHub pages
+### Architecture / Patterns
 
-[View live site here](https://chrisdiaz98.github.io/se_project_spots)
+- BEM Methodology
+- Modular File Structure
+- Reusable Modal Utility Functions
+- Centralized API Class
 
-[VIDEO Walkthrough Part 1](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=drive_link)
+### Tooling
 
-[VIDEO Project Update 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=drive_link)
+- Webpack
+- Babel
+- Core-JS
+- Regenerator Runtime
 
-Video Walkthrough | Part 2 Coming Soon.
+### Backend Integration
 
-## PICTURES
+REST API via Fetch:
 
-[Screenshot of Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48 AM.png)
+- GET /users/me
+- PATCH /users/me
+- PATCH /users/me/avatar
+- GET /cards
+- POST /cards
+- DELETE /cards/:cardId
+- PUT /cards/:cardId/likes
+- DELETE /cards/:cardId/likes
 
-[Screenshot of Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.14.33 AM.png)
+---
 
-[Screenshot of Spots App](./images/README-images/card-image-modal-readme.png)
+## Project Pitch Video
 
-[Screenshot of Spots App](./images/README-images/edit-profile-readme.png)
+Check out this video where I walk through the project, explain the tools used, challenges I faced, and how I solved them:
 
-[Screenshot of Spots App](./images/README-images/new-post-readme.png)
+[Project Pitch – Final Submission](https://drive.google.com/file/d/1sPFKhY2srehYVtdlWmutXIR1k7cQPGDE/view?usp=sharing)
+
+---
+
+## Additional Project Videos
+
+Check out these videos documenting earlier stages of the project:
+
+- [Initial Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=drive_link)
+- [Project Update – 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=drive_link)
+
+---
+
+## Deployment
+
+Live Site:  
+https://chrisdiaz98.github.io/se_project_spots
+
+---
+
+## What I Learned
+
+This project helped me develop a deeper understanding of:
+
+- Connecting frontend apps to real backend APIs
+- Managing async data with Promises and Promise.all
+- Designing scalable modal and validation systems
+- Mapping DOM elements to server data safely
+- Writing clean modular JavaScript
+- Improving UX with loading states and validation feedback
+
+---
+
+## Future Improvements
+
+Planned enhancements include:
+
+- Like counters displayed on cards
+- Delete permissions restricted to card owner
+- OOP refactor using classes (Popup, Card, Section, UserInfo)
+- Skeleton loading states
+- Accessibility improvements
+
+---
+
+## Screenshots
+
+![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48%20AM.png)
+
+![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.14.33%20AM.png)
+
+![Preview Modal](./images/README-images/card-image-modal-readme.png)
+
+![Edit Profile Modal](./images/README-images/edit-profile-readme.png)
+
+![New Post Modal](./images/README-images/new-post-readme.png)
