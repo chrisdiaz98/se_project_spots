@@ -108,6 +108,14 @@ Check out these videos documenting earlier stages of the project:
 
 ---
 
+## Spots Walkthrough Images
+
+Checkout some screenshots of the website in action:
+
+- [Spots Images](https://drive.google.com/drive/folders/1-LBm1Z5rI0nfKwxbkk7oVciFfNrqU0El?usp=drive_link)
+
+---
+
 ## Deployment
 
 Live Site:  
@@ -138,16 +146,4 @@ Planned enhancements include:
 - Skeleton loading states
 - Accessibility improvements
 
----
 
-## Screenshots
-
-![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48%20AM.png)
-
-![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.14.33%20AM.png)
-
-![Preview Modal](./images/README-images/card-image-modal-readme.png)
-
-![Edit Profile Modal](./images/README-images/edit-profile-readme.png)
-
-![New Post Modal](./images/README-images/new-post-readme.png)
