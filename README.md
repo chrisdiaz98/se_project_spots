@@ -103,8 +103,16 @@ Check out this video where I walk through the project, explain the tools used, c
 
 Check out these videos documenting earlier stages of the project:
 
-- [Initial Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=drive_link)
-- [Project Update – 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=drive_link)
+- [Initial Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=sharing)
+- [Project Update – 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=sharing)
+
+---
+
+## Spots Walkthrough Images
+
+Checkout some screenshots of the website in action:
+
+- [Spots Images](https://drive.google.com/drive/folders/1-LBm1Z5rI0nfKwxbkk7oVciFfNrqU0El?usp=drive_link)
 
 ---
 
@@ -137,17 +145,3 @@ Planned enhancements include:
 - OOP refactor using classes (Popup, Card, Section, UserInfo)
 - Skeleton loading states
 - Accessibility improvements
-
----
-
-## Screenshots
-
-![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.13.48%20AM.png)
-
-![Spots App](./images/README-images/Screenshot%202025-07-07%20at%2012.14.33%20AM.png)
-
-![Preview Modal](./images/README-images/card-image-modal-readme.png)
-
-![Edit Profile Modal](./images/README-images/edit-profile-readme.png)
-
-![New Post Modal](./images/README-images/new-post-readme.png)
