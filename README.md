@@ -103,8 +103,8 @@ Check out this video where I walk through the project, explain the tools used, c
 
 Check out these videos documenting earlier stages of the project:
 
-- [Initial Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=drive_link)
-- [Project Update – 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=drive_link)
+- [Initial Walkthrough](https://drive.google.com/file/d/1p7uL5EHT-B_8yJi0w1TI8TphUUkG1mY3/view?usp=sharing)
+- [Project Update – 8/29/25](https://drive.google.com/file/d/1ddO4qqPIQT6orj96ogNDikqFgfn4SqxP/view?usp=sharing)
 
 ---
 
